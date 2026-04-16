@@ -28,7 +28,7 @@ void Bullet::Draw() const
 {
     if (!active) return;
 
-    if (type == BulletType::PLAYER)
+    if (type == PLAYER)
         DrawCircleV(position, 4, BLUE);
     else
         DrawCircleV(position, 4, RED);
