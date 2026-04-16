@@ -2,23 +2,25 @@
 #include "player.h"
 
 int main(){
-    InitWindow(800,600,"space thing");
 
-    Player player;
+    const int swidth = 1400;
+    const int sheight =1000;
 
-    SetTargetFPS(60);
+     InitWindow(swidth, sheight, "Space Invaders Prototype"); 
+     SetTargetFPS(60);
 
-    while(!WindowShouldClose()){
+     Player player(swidth, sheight);
+
+     while (!WindowShouldClose()){
         player.update();
-
         BeginDrawing();
         ClearBackground(BLACK);
 
         player.draw();
 
         EndDrawing();
-    }
-
-    CloseWindow();
-    return 0;
+     }
+     
+     CloseWindow();
+     return 0;
 }
