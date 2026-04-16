@@ -9,7 +9,7 @@ Enemy::Enemy(Vector2 pos, int health, float spd) : position(pos), hp(health), sp
     simple_enemy = LoadTexture("assets/enemy_simple.png");
     if (simple_enemy.id == 0)
     {
-        std::cout << "Failed to load enemy texture!" << std::endl;
+        cout << "Failed to load enemy texture!" << endl;
     }
 }
 
@@ -17,7 +17,7 @@ void Enemy::Draw() const { DrawTextureEx(simple_enemy, position, 0.0f, 0.5f, WHI
 void Enemy::Update()
 {
     position.x += speed; // bcz our enemies (smallest scale) only move down the screen rather than left, right, upwards
-    if (position.x <= 0 || position.x + 500 >= 1400)
+    if (position.x <= 0 || position.x + 250 >= 1400)
     {
         speed *= -1;
     }
