@@ -1,26 +1,31 @@
 #include "raylib.h"
+#include "enemy.h"
 #include "player.h"
 
-int main(){
+int main()
+{
 
-    const int swidth = 1400;
-    const int sheight =1000;
+   const int swidth = 1400;
+   const int sheight = 1000;
 
-     InitWindow(swidth, sheight, "Space Invaders Prototype"); 
-     SetTargetFPS(60);
+   InitWindow(swidth, sheight, "Space Invaders Prototype");
+   SetTargetFPS(60);
 
-     Player player(swidth, sheight);
+   Player player(swidth, sheight);
 
-     while (!WindowShouldClose()){
-        player.update();
-        BeginDrawing();
-        ClearBackground(BLACK);
+   Enemy enemy({500, 100}, 1, 4.0f); // position, hp, speed
+   while (!WindowShouldClose())
+   {
+      player.update();
+      enemy.Update();
+      BeginDrawing();
+      ClearBackground(BLUE);
 
-        player.draw();
+      player.draw();
+      enemy.Draw();
+      EndDrawing();
+   }
 
-        EndDrawing();
-     }
-     
-     CloseWindow();
-     return 0;
+   CloseWindow();
+   return 0;
 }

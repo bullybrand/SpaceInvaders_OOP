@@ -14,17 +14,18 @@ protected:
     Vector2 position; // show that the enemy has x and y values
     int hp;           // should be equal to player's bullet damage if you want the simpler enemies to be one-shot easy
     float speed;      // rate of change in x and y values, in our case for simple enemies the must simply move downwards on the screen
-    EnemyState state; // as desrcibed above in the enum class
+    EnemyState state  ; // as desrcibed above in the enum class
+    Texture2D simple_enemy ;
 
 public:
     // constructor
     Enemy(Vector2 pos, int health, float spd);
 
     // make enemies move straight down
-    virtual void Update(Vector2 playerPos) = 0;
-    virtual void Draw() const = 0;
+    virtual void Update() ;
+    virtual void Draw() const ;
 
-    virtual void Shoot() = 0; // create bullets and make them move away from enemy, towards player
+    //virtual void Shoot(); // create bullets and make them move away from enemy, towards player
 
     // no excessive animaion for now, simply stop drawing enemy
     void TakeDamage(int damage);
