@@ -2,7 +2,7 @@
 #include "player.h"
 
 int main(){
-    InitWindow(800,600,"space thing");
+    InitWindow(1800,1600,"space thing");
 
     Player player;
 
