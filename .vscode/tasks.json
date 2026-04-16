@@ -8,8 +8,8 @@
             "args": [
                 "main.cpp",
 
-                "-ID:/Raylib/include",
-                "-LD:/Raylib/lib",
+                "-IC:/Raylib/include",
+                "-LC:/Raylib/lib",
 
                 "-o",
                 "SpaceInvaders.exe",

@@ -1,13 +1,21 @@
 #include "raylib.h"
+#include "player.h"
 
-int main() {
-    InitWindow(800, 450, "Raylib Working");
+int main(){
+    InitWindow(800,600,"space thing");
+
+    Player player;
+
     SetTargetFPS(60);
 
-    while (!WindowShouldClose()) {
+    while(!WindowShouldClose()){
+        player.update();
+
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawText("It works!", 300, 200, 20, DARKBLUE);
+        ClearBackground(BLACK);
+
+        player.draw();
+
         EndDrawing();
     }
 
