@@ -27,5 +27,5 @@ int main()
    }
 
    CloseWindow();
-   return 0;
+   std::cout<<"testing done";
 }
